@@ -8,7 +8,7 @@ router.get("/sayWelcome", async (req, res) => {
     .then((results) => {
       const users = results.data;
       let new_arr = [];
-
+      // מחזיר מערך חדש עם אוביקטים ממערך הישן
       users.forEach((y) => {
         const person = {
           person_name: y.name,
@@ -18,18 +18,12 @@ router.get("/sayWelcome", async (req, res) => {
         };
         new_arr.push(person);
       });
-      //const arr = users.filter((x) => parseInt(x.id) > 5);
-      //const obj = users.find((x) => x.email !== "");
+      // const arr = users.filter((x) => parseInt(x.id) > 5);
+      //מחזיר מייל const obj = users.find((x) => x.email !== "");
       //   console.log("number of users" + " " + users.length);
-      //   users.forEach((element) => {
-      //     console.log(element.name + " -- " + element.company.name);
-      //   });
-      //   return res.status(200).json({ data: users.length });
-      // })
-      // .catch((error) => {
-      //   return res.status(500).json({ message: error.message });
-      // });
-      //return res.status(200).json({ message: "Welcome to food-api server}" });
+      //    users.forEach((element) => {
+      //   שם +עבודה   console.log(element.name + " -- " + element.company.name);
+
       return res.status(200).json({ data: new_arr });
     })
     .catch((error) => {
